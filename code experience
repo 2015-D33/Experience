@@ -1,0 +1,26 @@
+
+
+      在这里记录日常阅读、编写代码的一些tips、心得等、方便学习
+
+
+1.使用 ViewCompat.animate(label)
+                .alpha(1)
+                .scaleX(1)
+                .scaleY(1)
+                .translationY(0)
+                .setDuration(ANIMATION_DURATION);
+对view做动画，
+ ViewCompat.animate(editText)
+                .alpha(1f)
+                .setUpdateListener(new ViewPropertyAnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(View view) {
+                        float value = ViewCompat.getAlpha(view); //percentage
+                        更改view的宽高等
+                        requestLayout();
+                    }
+                })
+
+2.scrollTo()、 scrollBy(): view的位置并没有发生改变，而是view的内容发生滚动，实际是canvas.translate()操作
+
+3.
